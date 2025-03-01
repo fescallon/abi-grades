@@ -1,0 +1,5 @@
+(executable
+ (public_name abi_grades)
+ (name main)
+ (flags -warn-error -26)
+ (libraries abi_grades config unix curses))
