@@ -111,7 +111,6 @@ let is_alpha s =
     in aux @@ char_list_of_string 0 [] s
 
 
-
 let rec load_config () = 
         if not @@ Sys.file_exists "config.txt" then
             let ret = Sys.command "echo -n \"/proflst\n/end_proflst\nprof:\" > config.txt"
@@ -206,7 +205,7 @@ let rec load_config () =
             in try 
                 aux [] ns ns; 
             with e -> close_in config; raise e
-        in (profiles_of_names @@ load_names ())
+        in profiles_of_names @@ load_names ()
 
 let create_profile n = 
     let config = open_in "config.txt" in
